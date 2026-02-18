@@ -1,0 +1,494 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #eeeeee;
+    color: #512323;
+  }
+  
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-color: #fffcf5;
+  min-height: 90vh;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  gap: 40px;
+}
+
+/* Partie gauche */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* nom en haut */
+  position: relative;
+}
+
+.portfolio-title {
+  font-size: 1.8rem;
+  color: #512323;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-left h1 {
+  font-family: 'Alice', serif;
+  font-size: 4rem;
+  color: #76323f;
+  margin-bottom: 15px;
+}
+
+.hero-left h1 span {
+  display: block;
+  margin-top: 5px;
+}
+
+.hero-left .infos {
+  font-size: 1.2rem;
+  color: #512323;
+  display: flex;
+  gap: 15px;
+  margin-bottom: auto; /* pousse le bouton CV vers le bas */
+}
+
+.hero-left .infos span + span::before {
+  content: "|";
+  margin: 0 5px;
+  color: #512323;
+}
+
+/* Bouton CV en bas à gauche */
+.cv-link {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #c09f80;
+  color: #c09f80;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s;
+  margin-top: auto; /* pousse le bouton en bas */
+}
+
+.cv-link:hover {
+  background-color: #c09f80;
+  color: #111;
+}
+
+/* Partie droite */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-right img {
+  width: auto;
+  height: 70vh;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left .infos {
+    justify-content: center;
+  }
+
+  .hero-right img {
+    height: 50vh;
+  }
+
+  .cv-link {
+    margin-top: 20px; /* espace sur mobile */
+  }
+}
+
+
+
+  .hero h1 {
+    font-size: 6rem;
+  }
+  
+  .hero p {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #d7cec7;
+  }
+  
+  
+  .hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 6rem;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #c09f80;
+  }
+  .hero-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;      /* ajuste la taille */
+    opacity: 0.8;      /* léger effet pro */
+    z-index: 2;
+  }  
+  
+  /* PROJETS */
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 60px 40px;
+    background-color: #d7cec7;
+  }
+  
+  /* RECTANGLES DES PROJETS AGRANDIS */
+  .project {
+    text-decoration: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* padding augmenté */
+    text-align: center;
+  }
+  
+  /* Couleurs projets */
+  .project.proj1 { /* Stage Schneider Electric */
+    background-color: #009E4D;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+  }
+  
+  .project.proj2 { background-color: #eeeeee; border: 2px solid #76323f; color: #512323; }
+  .project.proj3 { background-color: #d7cec7; border: 2px solid #c09f80; color: #512323; }
+  .project.proj4 { background-color: #dac3ad; border: 2px solid #76323f; color: #eeeeee; }
+  .project.proj5 { background-color: #76323f; border: 2px solid #512323; color: #eeeeee; }
+  .project.proj6 { background-color: #512323; border: 2px solid #c09f80; color: #eeeeee; }
+  .project.proj7 { background-color: #eeeeee; border: 2px solid #76323f; color: #512323; }
+  .project.proj8 { background-color: #d7cec7; border: 2px solid #c09f80; color: #512323; }/* IMAGES DES PROJETS AGRANDIES */
+  .project img {
+    width: 100%;
+    height: 250px; /* hauteur augmentée */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* TITRES DES PROJETS AGRANDIS */
+  .project h2 {
+    font-size: 1.7rem; /* avant 1.5rem */
+    margin-top: 15px;
+  }
+  
+  /* Hover projets sauf Stage */
+  .project:not(.proj1):hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    background-color: #512323;
+    color: #eeeeee;
+  }
+  
+  /* Hover pour Stage (vert plus foncé) */
+  .project.proj1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    background-color: #007a36;
+    color: #FFFFFF;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .projects {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+  
+  /* BACK BUTTON */
+  .back {
+    margin: 20px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid currentColor;
+    transition: all 0.3s;
+  }
+  
+  .back:hover {
+    background-color: currentColor;
+    color: #fff;
+  }
+  
+  /* PAGE PROJET */
+  .project-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+  }
+  
+  .project-detail .media {
+    flex: 1 1 400px;
+  }
+  
+  .project-detail .media video,
+  .project-detail .media img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  
+  .project-detail .content {
+    flex: 1 1 400px;
+  }
+  
+  .project-detail .content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .project-detail .content h2 {
+    font-size: 2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .project-detail .content p,
+  .project-detail .content ul {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .project-detail .content ul.tools {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* THEMES DES PAGES PROJETS */
+  
+  /* STAGE – FOND BLANC, TITRES VERTS, TEXTE NOIR */
+  body.stage-theme { 
+    background-color: #ffffff; /* fond blanc */
+    color: #000000; /* texte noir */
+  }
+  
+  body.stage-theme h1, 
+  body.stage-theme h2 { 
+    color: #009E4D; /* titres verts Schneider */ 
+  }
+  
+  body.stage-theme .project-detail,
+  body.stage-theme .media,
+  body.stage-theme .content,
+  body.stage-theme video,
+  body.stage-theme img {
+    background-color: transparent;
+    color: inherit;
+  }
+  
+  body.stage-theme a.back {
+    color: #009E4D;
+    border-color: #009E4D;
+  }
+  
+  body.stage-theme a.back:hover {
+    background-color: #007a36; /* hover vert foncé */
+    color: #ffffff;
+  }
+  
+  body.stage-theme .project-detail:hover {
+    background-color: transparent;
+    color: inherit;
+  }
+  
+  /* Autres projets */
+  body.proj2-theme { background-color: #eeeeee; color: #512323; }
+  body.proj3-theme { background-color: #d7cec7; color: #512323; }
+  body.proj4-theme { background-color: #d3beaa; color: #76323f; }
+  body.proj5-theme { background-color: #76323f; color: #eeeeee; }
+  body.proj6-theme { background-color: #512323; color: #eeeeee; }
+  body.proj7-theme { background-color: #eeeeee; color: #512323; }
+  body.proj8-theme { background-color: #d7cec7; color: #512323; }
+  .cv-link {
+    margin-top: 30px;
+    padding: 12px 30px;
+    border: 2px solid #c09f80;
+    color: #c09f80;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s;
+    z-index: 2;
+  }
+  
+  .cv-link:hover {
+    background-color: #c09f80;
+    color: #111;
+  }
+/* PAGE PROJET */
+.project-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+  }
+  
+  /* HAUT */
+  .top-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+  
+  .media video,
+  .media img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  
+  /* INTRO */
+  .intro h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .intro h2 {
+    margin-top: 20px;
+  }
+  
+  /* PROBLEME / SOLUTION */
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  /* CARTES */
+  .card {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #eeeeee;
+  }
+  
+  /* OUTILS */
+  .tools-section {
+    margin-bottom: 60px;
+  }
+  
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .tool {
+    text-align: center;
+  }
+  
+  .tool img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
+  
+  /* BILAN */
+  .bilan {
+    margin-bottom: 40px;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .top-section,
+    .two-columns,
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }}
+
+      
+      /* NOM / PRENOM */
+      .hero-text h1 {
+        font-size: 5rem;
+        color: #eeeeee;
+        margin-bottom: 20px;
+      }
+      
+      .hero-text p {
+        font-size: 1.8rem;
+        color: #c09f80;
+      }
+      
+      /* LOGO IUT */
+      .hero-logo {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 120px;      /* ajuste la taille */
+        opacity: 0.8;      /* léger effet pro */
+        z-index: 2;
+      }
+      
+  /* PREVISUALISATION REELLE DES PAGES */
+.projects .project {
+  position: relative;
+}
+
+.portfolio-title {
+  font-family: 'Arial', sans-serif; /* ou Maragsa si tu veux */
+  font-size: 1.8rem;
+  color: #512323; /* couleur sombre pour contraster */
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.schneider-link {
+  color: #009E4D; /* vert Schneider */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.schneider-link:hover {
+  text-decoration: underline;
+}
+/* FIX PROJETS 5 & 6 : texte visible dans les cartes */
+body.proj5-theme .card,
+body.proj6-theme .card {
+  background-color: rgba(0, 0, 0, 0.2); /* fond foncé transparent */
+  color: #eeeeee; /* texte blanc */
+}
+
+body.proj5-theme .card h2,
+body.proj6-theme .card h2 {
+  color: #ffffff; /* titres visibles */
+}
